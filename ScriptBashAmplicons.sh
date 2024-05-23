@@ -152,9 +152,9 @@ for pair in "${primer_pairs[@]}"; do
     cat ${pair// /_}_consensus/medaka_cl_id*/consensus.fasta > cat_${pair// /_}_consensus.fasta
 done
 
-#SCRIPT END
+# SCRIPT END
 
-#QIIME OPTION
+# QIIME OPTION
 
 # Load Qiime2 for reads processing
 conda activate qiime2-2023.5
@@ -201,43 +201,7 @@ bmge -i mafft_output.fasta -t DNA -of bmge_output.fasta
 trimal -in mafft_output.fasta -out trimal_output.fasta -automated1 # Use a heuristic selection of the automatic method based on similarity statistics. (Optimized for Maximum Likelihood phylogenetic tree reconstruction).
 iqtree2 -s trimal_output.fasta -m MFP -bb 1000 -T AUTO --prefix
 
-# Run blast with clustered OTUs against GenBank database
-blastn -task megablast -query nonchimeras_exported_${pair// /_}/dna-sequences.fasta -db nr -outfmt 6 -out megablast_results${pair// /}.txt -outfmt 0 -out megablast_results${pair// /_}.fasta -remote -evalue 0.0001 -perc_identity 95 #e-value and perc. ient. from Krehenwinkel et al., 2019
-
-# Amplicon sorter
-python3 /home/edouard/amplicon_sorter.py -i input_file.fasta/fastq -np 12 -a -o output_folder
-## -min, --minlength: Minimum readlenght to process. Default=300
-## -a, --all: Compare all selected reads with each other. 
-### Only advised for a small number of reads (< 10000) because it is computation intensive. (In contrast with the default settings where it compares batches of 1.000 with each other).
-
-
-
-# To compare the outputs of NGSspeciesID and Qiime between them, you can use some of the following metrics:
-You can compare the number and size of the consensus sequences or clusters produced by each pipeline, and see how they differ in terms of diversity and abundance.
-You can compare the accuracy and quality of the consensus sequences or clusters produced by each pipeline, and see how they differ in terms of errors, chimeras, and mismatches.
-You can compare the computational time and resources required by each pipeline, and see how they differ in terms of efficiency and scalability.
-
 # Convert fastq files in fasta files
 #for pair in "${primer_pairs[@]}"; do
   #fastq_to_fasta -n -i final_reads_${pair// /_}.fastq -o final_reads_${pair// /_}.fasta
 #done
-
-# Create a manifest file with the paths to the final reads files
-#echo -e "sample-id\tabsolute-filepath" > manifest.txt
-#n=1
-#for pair in "${primer_pairs[@]}"; do
-    #echo -e "Barcode05_$n\t$(pwd)/final_reads_${pair// /_}.fastq" >> manifest.txt # Modify with Barcode number 
-    #n=$((n+1))
-#done
-
-# Build a phylogenetic tree using iqtree and mafft alignment.
-qiime phylogeny align-to-tree-mafft-iqtree
-
-# To get statistics on your FASTQ files, such as min, max, and mean sequence length, run the following command:
-seqkit stats your_file.fastq
-
-# Use this command to add 'barcode05_GbDK' after each > sign in your fasta file:
-sed 's/>/>barcode05_GbDK_/' input.fasta > output.fasta
-
-#Canu assembly
-sudo docker run greatfireball/canu -p assembly-prefix -d canu_assembly/ genomeSize=1000 corMhapSensitivity=high corMinCoverage=0 corOutCoverage=200 -nanopore-corrected input_file_path
