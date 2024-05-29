@@ -4,7 +4,7 @@ library(ggplot2)
 library(extrafont)
 library(viridis)
 loadfonts()
-setwd("C:/Users/eb826/OneDrive - University of Exeter/PhD_EdouardMicrosporidia/Thesis/Chapter3_Protist parasites survey/Crickets_greg")
+setwd("C:/Users/eb826/OneDrive - University of Exeter/PhD_EdouardMicrosporidia/Thesis/Chapter3_Protist parasites survey/Crickets_greg/Heatmap_LSU")
 
 # Read the CSV file into a data frame
 df <- read.csv("blast_results.csv", row.names = 1)
@@ -34,11 +34,11 @@ heatmap.2(as.matrix(df),
           offsetRow = 0.1,
           offsetCol = 0.1,
           density.info = "none", 
-          lhei = c(1.7, 5), 
+          lhei = c(1.7, 5.7), 
           lwid = c(1.4, 4.5),
           srtCol = 45)
 
-title(main="Percentage similiraties for gregarine amplicons from cricket hosts", line=1.5, adj=1) # Add a main title
+#title(main="Percentage similiraties for gregarine amplicons from cricket hosts", line=0.3, adj=0.9) # Add a main title
 
 # Stop the graphics device and save the image
 dev.off()
