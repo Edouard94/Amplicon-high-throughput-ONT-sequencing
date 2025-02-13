@@ -192,7 +192,7 @@ done
 
 conda deactivate
 
-# The script for extracting the amplicons ends here, the next steps for  phylogenetic analyses should be done according to your different organism groups
+# The script for extracting the amplicons ends here, the next steps are for phylogenetic analyses and should be done according to your different organism groups
 
 # Align the dereplicated sequences (NGSpeciesID or qiime outputs) with MAFFT, curate with bmge, find the best model and make a tree with iqtree
 mafft --thread -1 --auto input.fasta > mafft_output.fasta
@@ -200,8 +200,3 @@ bmge -i mafft_output.fasta -t DNA -of bmge_output.fasta
 #or
 trimal -in mafft_output.fasta -out trimal_output.fasta -automated1 # Use a heuristic selection of the automatic method based on similarity statistics. (Optimized for Maximum Likelihood phylogenetic tree reconstruction).
 iqtree2 -s trimal_output.fasta -m MFP -bb 1000 -T AUTO --prefix
-
-# Convert fastq files in fasta files
-#for pair in "${primer_pairs[@]}"; do
-  #fastq_to_fasta -n -i final_reads_${pair// /_}.fastq -o final_reads_${pair// /_}.fasta
-#done
