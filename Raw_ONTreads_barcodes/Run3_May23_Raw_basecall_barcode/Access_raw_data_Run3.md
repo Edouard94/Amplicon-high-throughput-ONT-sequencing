@@ -1,1 +1,0 @@
-To access the raw data of the third Nanopore run use this link (contact me on github if you don't have access): https://universityofexeteruk-my.sharepoint.com/:f:/r/personal/e_bessette_exeter_ac_uk/Documents/PhD_EdouardMicrosporidia/Thesis/Chapter3_Protist%20parasites%20survey/Run%20May%202023/Run3_May23_Raw_basecall_barcode?csf=1&web=1&e=uGiJnC
