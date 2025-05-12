@@ -1,0 +1,55 @@
+FASconCAT INFO:
+SUPERMATRIX FILE	P CODING CHARACTERS [%]	P MISSING DATA [?] [%]	P INDELS [%]	P AMBIGUITIES [%]	P PARSIMONY INFORMATIVE SITES [%]	P GC CONTENT [%]	PRINTED AS FASTA	PRINTED AS NEXUS	PRINTED AS PHYLIP
+supermatrix	84.521	0	15.477	0.002	29.084	40.229	YES	NO	NO
+
+FILE	START POSITION SUPERMATRIX	END POSITION SUPERMATRIX	N SEQUENCES	SEQUENCE TYPE	N CHARACTERS	N MISSING DATA [?]	N INDELS	N AMBIGUITIES	N PARSIMONY INFORMATIVE SITES	N GC CONTENT	N CODING CHARACTERS	A	C	G	T	U	N	Y	R	W	S	K	M	D	V	H	B	F	L	I	P	Q	E
+bmge_18S.fasta	1	321	20	nu	6420	0	1000	0	5420	2643	87	1262	1298	1345	1515	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+bmge_28S.fasta	322	2620	20	nu	45980	0	7110	1	38869	18437	675	11071	7804	10633	9361	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+supermatrix	1	2620	20	nu	52400	0	8110	1	44289	21080	762	12333	9102	11978	10876	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0
+
+Taxon check
+Taxon	N CONCATENATED SEQs	N INFORMATIVE SEQs	N MISSING SEQs
+Gregarina_niphandrodes	2	2	0
+Run1_B2_Gryllus_bimaculatus_Greg	2	2	0
+Run1_B5_Gryllus_assimilis_Greg1	2	2	0
+PRJNA784797_Gryllodes_sigillatus	2	2	0
+Run1_B1_Aphomia_sociella_Greg	2	2	0
+PRJNA485997_Acheta_domesticus	2	2	0
+Run1_B5_Gryllus_assimilis_Kinet2	2	2	0
+Ancora_sagittata	2	2	0
+Gregarina_sp_Phaedon	2	2	0
+Gregarina_lutescens	2	2	0
+Run1_B5_Gryllus_assimilis_Kinet1	2	2	0
+Leidyana_gryllorum	2	2	0
+Run1_B7_Gryllus_sigillatus_Greg2	2	2	0
+Run1_B5_Gryllus_assimilis_Greg4	2	2	0
+Run1_B5_Gryllus_assimilis_Greg2	2	2	0
+Run1_B7_Gryllus_sigillatus_Kinet	2	2	0
+DRP012276_SRP273586_Gbimaculatus	2	2	0
+Run1_B7_Gryllus_sigillatus_Greg1	2	2	0
+PRJNA392944_Laupala_kohalensis	2	2	0
+Run1_B5_Gryllus_assimilis_Greg3	2	2	0
+
+
+------------------------------------------------------------
+Defined Options:
+-----------------
+READ IN ALL files:	YES
+READ IN SINGLE files:	NO
+FILE HANDLING:	Supermatrix
+SEQUENCE TRANSLATION	NO
+EXCLUDING 3rd POSITION	Remain
+RY CODING	NO
+BUILD CONSENSUS	NO
+RENAME SEQUENCE NAMES	NO
+ABSENT SEQUENCE CODING	Missing
+
+-----------------
+OUTPUT FORMAT:
+PHYLIP:	NO
+NEXUS:	NO
+FASTA:	YES
+PARTITION:	NO
+PARSIMONY:	NO
+PROTTEST:	NO
+------------------------------------------------------------

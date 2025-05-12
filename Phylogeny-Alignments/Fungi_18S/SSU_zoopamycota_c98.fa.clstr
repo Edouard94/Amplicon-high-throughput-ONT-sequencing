@@ -1,0 +1,33 @@
+>Cluster 0
+0	6326aa, >U35394_Entomophaga_... *
+>Cluster 1
+0	1863aa, >AF368517_Eryniopsis... *
+>Cluster 2
+0	1857aa, >AF368513_Erynia_con... *
+>Cluster 3
+0	1853aa, >AF368515_Erynia_sci... *
+>Cluster 4
+0	1852aa, >AF368519_Furia_pier... *
+1	1852aa, >AF368521_Pandora_de... at 99.14%
+>Cluster 5
+0	1850aa, >AF368522_Pandora_di... *
+>Cluster 6
+0	1846aa, >AF368514_Erynia_rhi... *
+1	1750aa, >JX242620_Erynia_ovi... at 99.20%
+>Cluster 7
+0	1739aa, >MG253005_Zoophthora... at 99.65%
+1	1844aa, >AF368525_Zoophthora... *
+>Cluster 8
+0	1844aa, >AF368524_Zoophthora... *
+>Cluster 9
+0	1760aa, >HQ677594_Pandora_no... at 98.07%
+1	1762aa, >JX242624_Zoophthora... *
+2	1060aa, >EF392561_Zoophthora... at 98.96%
+>Cluster 10
+0	1087aa, >JX242610_Basidiobol... *
+>Cluster 11
+0	1064aa, >EF392550_Zoophthora... *
+>Cluster 12
+0	657aa, >id_0_total_supporti... *
+>Cluster 13
+0	611aa, >id_3_total_supporti... *

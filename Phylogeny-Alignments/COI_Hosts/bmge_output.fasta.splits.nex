@@ -1,0 +1,96 @@
+#nexus
+
+BEGIN Taxa;
+DIMENSIONS ntax=11;
+TAXLABELS
+[1] 'NNCF01125867_39965-40622_Laupala_kohalensis_putativeCOX1_RC'
+[2] 'MT706095_TRIGONIDIUM_CICINDELOIDES'
+[3] 'OQ182095_Aphomia_sociella'
+[4] 'MZ580904_Capitella_capitata'
+[5] 'MZ701944_Gryllodes_sigillatus'
+[6] 'PP234604_Gryllus_assimilis'
+[7] 'MT859331_Acheta_domesticus'
+[8] 'OP686454_Harmonia_axyridis'
+[9] 'PQ496650_Phaedon_brassicae'
+[10] 'MK088307_Tenebrio_molitor'
+[11] 'KJ850234_Gryllus_bimaculatus'
+;
+END; [Taxa]
+
+BEGIN Splits;
+DIMENSIONS ntax=11 nsplits=70;
+FORMAT labels=no weights=yes confidences=no intervals=no;
+MATRIX
+	100	 2,
+	100	 3,
+	100	 4,
+	2	 3 4,
+	100	 9,
+	7	 3 4 9,
+	100	 8,
+	27	 3 4 8 9,
+	100	 10,
+	82	 3 4 8 9 10,
+	100	 5,
+	100	 6,
+	19	 5 6,
+	100	 11,
+	71	 5 6 11,
+	100	 7,
+	90	 5 6 7 11,
+	95	 1 2,
+	100	 1,
+	37	 8 9,
+	69	 4 8 9,
+	2	 6 7,
+	14	 6 7 11,
+	5	 4 10,
+	3	 4 9 10,
+	10	 3 4 9 10,
+	69	 6 11,
+	8	 1 2 8,
+	45	 4 8 9 10,
+	3	 3 5 6 7 11,
+	5	 8 9 10,
+	28	 4 9,
+	0	 2 4 8 9 10,
+	1	 7 11,
+	2	 3 9,
+	6	 1 2 4 8 9,
+	24	 4 8,
+	11	 3 10,
+	6	 3 8 9,
+	2	 3 8,
+	9	 5 7,
+	3	 9 10,
+	9	 1 2 7,
+	5	 1 2 6 7 11,
+	3	 1 2 7 11,
+	4	 3 8 9 10,
+	3	 1 2 4,
+	5	 5 11,
+	2	 3 4 10,
+	4	 1 5 6 7 11,
+	1	 5 6 7,
+	2	 3 9 10,
+	1	 8 10,
+	0	 4 8 10,
+	0	 1 2 4 8,
+	0	 1 2 10,
+	0	 4 5 6 7 11,
+	1	 3 4 8,
+	1	 5 7 11,
+	1	 5 6 7 10 11,
+	0	 3 5,
+	0	 1 2 8 9,
+	0	 2 4 8 9,
+	0	 1 2 5 6 11,
+	1	 3 4 8 10,
+	0	 1 4 8 9 10,
+	0	 2 5 6 7 11,
+	0	 1 2 4 9,
+	0	 1 2 3,
+	0	 1 4 8 9,
+;
+END; [Splits]
+
