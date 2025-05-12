@@ -2,26 +2,33 @@
 
 #------------------------------------------------------------------------------
 # IMPORTANT: Run the script with 'source' to ensure medaka gets activated properly.
-# For example: source amplicon.sh <input_file> <forward_primer> <reverse_primer> <amplicon_size>
+# For example: source amplicon.sh <input_file> <forward_primer> <reverse_primer> <min_amplicon_size> [max_amplicon_size]
+# e.g. source amplicon.sh fastq_runid_cd2409afdc364972d4e64953023ac179690563d1_0.fastq CCCTTAGATRRYCTGGGCTGC CGTGTTACGACTTCTTC 250 350
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
-# Check input parameters
-#------------------------------------------------------------------------------
+# Check input parameters  
+#------------------------------------------------------------------------------  
 # The script requires:
-# 1) A FASTQ file containing the sequencing reads.
-# 2) The forward primer sequence.
-# 3) The reverse primer sequence.
-# 4) The expected amplicon size.
-if [ "$#" -ne 4 ]; then
-    echo "Usage: source $0 <input_file> <forward_primer> <reverse_primer> <amplicon_size>"
-    exit 1
+#   1) FASTQ file
+#   2) Forward primer
+#   3) Reverse primer
+#   4) Min amplicon size
+#   5) [Optional] Max amplicon size (if omitted, exact size = min size)
+if [ "$#" -lt 4 ] || [ "$#" -gt 5 ]; then
+    echo "Usage: source $0 <input_file> <forward_primer> <reverse_primer> <min_amplicon_size> [max_amplicon_size]"
+    return 1
 fi
 
 input_file="$1"
 forward_primer="$2"
 reverse_primer="$3"
-amplicon_size="$4"
+min_amplicon_size="$4"
+if [ "$#" -eq 5 ]; then
+    max_amplicon_size="$5"
+else
+    max_amplicon_size="$4"
+fi
 
 #------------------------------------------------------------------------------
 # Define cutadapt parameters
@@ -80,10 +87,10 @@ cat trimmed_reads.fastq trimmed_reads_RC1.fastq > concatenated_reads.fastq
 fastq_quality_trimmer -t 10 -l 50 -i concatenated_reads.fastq -o filtered_reads.fastq
 
 #------------------------------------------------------------------------------
-# Step 4: Filter reads based on the expected amplicon size
-#------------------------------------------------------------------------------
-# Only keep reads whose length exactly matches the provided amplicon size.
-seqkit seq -m "$amplicon_size" -M "$amplicon_size" \
+#  Step 4: Filter reads based on the amplicon size window  
+#------------------------------------------------------------------------------  
+echo "Filtering reads between ${min_amplicon_size}-${max_amplicon_size} bp"
+seqkit seq -m "$min_amplicon_size" -M "$max_amplicon_size" \
            -i filtered_reads.fastq -o final_reads.fastq
 
 #------------------------------------------------------------------------------
